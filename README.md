@@ -106,6 +106,10 @@ All models and the scaler were saved as `.pkl` files using `joblib`.
 - **Permutation Importance** — true impact on F1 score for all 3 models
 - **SHAP (SHapley Additive exPlanations)** — summary plots and single-prediction waterfall charts
 
+![ROC Curve](plots/ROC%20curve.png)
+
+![Confusion Metrics](plots/confusion%20metrics.png)
+
 ---
 
 ## 📊 Results Summary
