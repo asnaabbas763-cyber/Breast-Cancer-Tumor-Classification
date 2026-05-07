@@ -114,9 +114,9 @@ All models and the scaler were saved as `.pkl` files using `joblib`.
 
 | Model | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
 |---|---|---|---|---|---|
-| **Logistic Regression** | — | — | — | — | **0.9974** |
-| SVM (RBF Kernel) | — | — | — | — | — |
-| Random Forest | — | — | — | — | — |
+| **Logistic Regression** | **0.9825** | **0.9762** | **0.9762** | **0.9762** | **0.9974** |
+| SVM (RBF Kernel) | **0.9912** | **1.0000** | **0.9762** | **0.9880** | **0.9967** |
+| Random Forest | **0.9912** | **1.0000** | **0.9762** | **0.9880** | **0.9942** |
 
 > *(Fill in your actual metric values from the notebook output)*
 
@@ -147,25 +147,8 @@ All models and the scaler were saved as `.pkl` files using `joblib`.
 
 > *(Replace with your actual Streamlit deployment link)*
 
----
 
-## ⚙️ Setup & Run Locally
 
-### Prerequisites
-- Python 3.8 or above
-- pip
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/breast-cancer-classification.git
-cd breast-cancer-classification
-```
-
-### 2. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
 
 Key libraries used:
