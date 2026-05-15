@@ -1,158 +1,105 @@
-# Breast Cancer Tumor Classification Using Clinical Features
+# Breast Cancer Tumor Classification
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.x-orange?logo=scikit-learn)
-![Streamlit](https://img.shields.io/badge/Streamlit-Deployed-red?logo=streamlit)
-![License](https://img.shields.io/badge/License-MIT-green)
+This repository contains a breast cancer classification project using the Wisconsin Breast Cancer Diagnostic dataset. The project includes two main Jupyter notebooks for data exploration, model training, evaluation, explainability, and deployment preparation.
 
----
+## Repository Structure
 
-## Team Members & Course Details
+```text
+Breast Cancer Wisconsin (Diagnostic) -wbc (1) (1) (1).csv
+README.md
+Requirements.txt
+app.py
+Problem Definition & Literature Review _ Data Collection & Data Understanding _ Data Preprocessing & Cleaning _ Exploratory Data Analysis.ipynb
+Stage_5_6_7_8_Feature_Engineering_Model_Building_Evaluation_Explainability.ipynb
+Models/
+plots/
+INDIVIDUAL PROFILES/
+```
 
-| Detail | Info |
-|---|---|
-| **School** | School of Digital Science |
-| **Institution** | *Digital University Kerala* |
-| **Team Members** | *Angel Treesa John, Nikhil, Asna Abbas* |
-| **Student IDs** | *253127* |
+## Notebooks
 
+- `Problem Definition & Literature Review _ Data Collection & Data Understanding _ Data Preprocessing & Cleaning _ Exploratory Data Analysis.ipynb`
+  - EDA, preprocessing, feature analysis, and dataset understanding.
+- `Stage_5_6_7_8_Feature_Engineering_Model_Building_Evaluation_Explainability.ipynb`
+  - Model training, evaluation, explainability, and saving model artifacts.
 
----
+## Dataset
 
-## Problem Statement & Motivation
+The dataset file is included in the repository root:
 
-Breast cancer is one of the most prevalent and life-threatening cancers worldwide. Early and accurate detection of whether a tumor is **malignant (cancerous)** or **benign (non-cancerous)** is critical; it directly impacts treatment decisions and patient survival rates.
+```text
+Breast Cancer Wisconsin (Diagnostic) -wbc (1) (1) (1).csv
+```
 
-Traditional diagnostic methods rely heavily on expert radiologists and pathologists, which can be time-consuming and subject to human error. Machine learning offers a powerful, data-driven alternative that can assist clinicians in making faster and more reliable diagnoses.
+### Important dataset note
 
-**Goal:** Build and compare multiple machine learning models that classify breast tumors as malignant or benign using numerical clinical features derived from digitized images of cell nuclei - and deploy the best model as an interactive web application.
+The CSV file does not include header names, so the notebook loads it using `header=None` and explicitly sets the column names. The target column is mapped from:
 
----
+- `M` → `1` (Malignant)
+- `B` → `0` (Benign)
 
-## Dataset Description
+The notebooks also drop the non-predictive `id` column before training.
 
-| Property | Details |
-|---|---|
-| **Name** | Wisconsin Breast Cancer (Diagnostic) Dataset (WBCD) |
-| **Source** | UCI Machine Learning Repository |
-| **Samples** | 568 |
-| **Features** | 30 numerical features |
-| **Target Variable** | `outcome` - M (Malignant = 1) / B (Benign = 0) |
+## Installation
 
-### Feature Groups
-Features are computed from digitized images of breast mass cell nuclei across three categories:
+1. Create a Python environment (recommended):
+   ```bash
+   python -m venv venv
+   .\venv\Scripts\activate
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r Requirements.txt
+   ```
 
-- **Mean values** - e.g., `radius_mean`, `texture_mean`, `area_mean`
-- **Standard Error (SE)** - e.g., `radius_se`, `perimeter_se`
-- **Worst values** - e.g., `radius_worst`, `concave_points_worst`
+## Running the Notebooks
 
-Key morphological features include: radius, texture, perimeter, area, smoothness, compactness, concavity, concave points, symmetry, and fractal dimension.
+1. Open the notebook files in VS Code or Jupyter.
+2. Run the cells from top to bottom.
+3. Make sure the dataset file is in the project root.
 
-### Class Distribution
+### Notes for `Stage_5_6_7_8_Feature_Engineering_Model_Building_Evaluation_Explainability.ipynb`
 
-| Class | Label | Count (approx.) |
-|---|---|---|
-| Benign | 0 | ~357 (63%) |
-| Malignant | 1 | ~212 (37%) |
+- The notebook now loads the CSV with explicit column names.
+- The `outcome` target column is created by mapping `diagnosis` values.
+- A local guard is included for the Colab download block, so the notebook works in non-Colab environments.
 
-> The dataset is slightly imbalanced but is suitable for classification tasks.
+## Model Artifacts
 
----
+After running the training notebook, the following files are generated:
 
-## Methodology Overview
+- `logistic_regression_model.pkl`
+- `svm_model.pkl`
+- `random_forest_model.pkl`
+- `scaler.pkl`
 
-The project follows a complete **ML lifecycle** across 8 stages:
+These files are saved locally in the notebook folder.
 
-### Stage 1 - Problem Definition & Literature Review
-- Defined the classification objective: malignant vs. benign tumor detection
-- Reviewed prior work on WBCD - models like LR, SVM, and Random Forest consistently achieve >90% accuracy
+## Key Findings
 
-### Stage 2 - Data Collection & Understanding
-- Loaded the WBCD dataset with 568 samples and 30 features
-- Understood feature semantics: mean, SE, and worst measurements per nucleus
+- The project compares Logistic Regression, SVM (RBF), and Random Forest.
+- The model evaluation includes accuracy, precision, recall, F1-score, ROC-AUC, confusion matrices, ROC curves, and stratified cross-validation.
+- Model explainability uses feature importances, logistic regression coefficients, permutation importance, and SHAP.
 
-### Stage 3 - Data Preprocessing & Cleaning
-- Removed the `id` column (non-predictive)
-- Encoded the target variable: M → 1, B → 0
-- Verified zero missing values and zero duplicate rows
+## How to Use
 
-### Stage 4 - Exploratory Data Analysis (EDA)
-- Plotted class distribution via count plots
-- Analyzed feature distributions using histograms
-- Detected outliers using boxplots
-- Performed correlation analysis (heatmap) - found strong correlation between radius, perimeter, and area
-- Visualized class separation via scatter plots (`radius_mean` vs `area_mean`)
+1. Run the first notebook to explore and preprocess the data.
+2. Run the second notebook to train the models and evaluate them.
+3. Optionally use `app.py` to build a Streamlit or Flask-based interface.
 
-### Stage 5 - Feature Engineering & Scaling
-- Applied **StandardScaler** for normalization (critical for LR and SVM)
-- Used an 80/20 stratified train-test split preserving class ratios
+## Recommended Python Version
 
-### Stage 6 - Model Building & Training
-Three models were trained and compared:
-1. **Logistic Regression** - `max_iter=1000`, scaled features
-2. **Support Vector Machine (SVM)** - RBF kernel, `probability=True`
-3. **Random Forest** - `n_estimators=100`
+- Python 3.8 or newer
 
-All models and the scaler were saved as `.pkl` files using `joblib`.
+## Contact
 
-### Stage 7 - Evaluation
-- Metrics: Accuracy, Precision, Recall, F1-Score, ROC-AUC
-- Tools: Confusion Matrix, ROC Curves, 5-Fold Stratified Cross-Validation
-- **Recall** was prioritized - a missed malignant case (False Negative) is far more dangerous than a False Positive in medical diagnosis
+For questions or improvements, review the notebook outputs and adjust the preprocessing, model parameters, or explainability analysis.
 
-### Stage 8 - Model Interpretation & Explainability
-- **Random Forest Feature Importances** - global feature ranking
-- **Logistic Regression Coefficients** - direction of feature influence
-- **Permutation Importance** - true impact on F1 score for all 3 models
-- **SHAP (SHapley Additive exPlanations)** - summary plots and single-prediction waterfall charts
+### Key libraries used
 
-![ROC Curve](plots/ROC%20curve.png)
-
-![Confusion Metrics](plots/confusion%20metrics.png)
-
----
-
-## Results Summary
-
-### Model Comparison
-
-| Model | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
-|---|---|---|---|---|---|
-| **Logistic Regression** | **0.9825** | **0.9762** | **0.9762** | **0.9762** | **0.9974** |
-| SVM (RBF Kernel) | **0.9912** | **1.0000** | **0.9762** | **0.9880** | **0.9967** |
-| Random Forest | **0.9912** | **1.0000** | **0.9762** | **0.9880** | **0.9942** |
-
-> *(Fill in your actual metric values from the notebook output)*
-
-### Key Findings
-- **Best Model by Accuracy & ROC-AUC:** Logistic Regression (ROC-AUC = **0.9974**)
-- **Most Important Features** (consistent across all models):
-  1. `concave_points_worst`
-  2. `perimeter_worst`
-  3. `radius_worst`
-- **Cross-Validation:** 5-Fold Stratified CV confirms model stability
-- In a medical context, **Recall** is the most critical metric — the model minimizes dangerous False Negatives
-
----
-
-## Application Screenshots
-
-> *(Add screenshots of your deployed Streamlit app here)*
-
-| Input Form | Prediction Result |
-|---|---|
-| ![App Input](screenshots/app_input.png) | ![App Output](screenshots/app_output.png) |
-
----
-
-## Live Deployment
-
-**Streamlit App:** [Click here to use the app](https://your-streamlit-app-url.streamlit.app)
-
-> *(Replace with your actual Streamlit deployment link)*
-
-
-
-
-
-Key libraries used:
+- `pandas`
+ - `numpy`
+ - `scikit-learn`
+ - `matplotlib`
+ - `shap`
+ - `joblib`
