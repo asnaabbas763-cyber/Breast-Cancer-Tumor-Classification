@@ -12,10 +12,10 @@
 | Detail | Info |
 |---|---|
 | **Course** | Machine Learning / Data Science |
-| **Institution** | *(Add your institution name)* |
-| **Team Members** | *(Add team member names)* |
-| **Student IDs** | *(Add student IDs)* |
-| **Submission Date** | *(Add date)* |
+| **Institution** | *Digital University Kerala* |
+| **Team Members** | *Angel Treesa John, Nikhil, Asna Abbas* |
+| **Student IDs** | *253127* |
+
 
 ---
 
