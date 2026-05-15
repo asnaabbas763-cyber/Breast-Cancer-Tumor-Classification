@@ -11,7 +11,7 @@
 
 | Detail | Info |
 |---|---|
-| **Course** | Machine Learning / Data Science |
+| **School** | School of Digital Science |
 | **Institution** | *Digital University Kerala* |
 | **Team Members** | *Angel Treesa John, Nikhil, Asna Abbas* |
 | **Student IDs** | *253127* |
