@@ -98,8 +98,8 @@ For questions or improvements, review the notebook outputs and adjust the prepro
 ### Key libraries used
 
 - `pandas`
- - `numpy`
- - `scikit-learn`
- - `matplotlib`
- - `shap`
- - `joblib`
+- `numpy`
+- `scikit-learn`
+- `matplotlib`
+- `shap`
+- `joblib`
