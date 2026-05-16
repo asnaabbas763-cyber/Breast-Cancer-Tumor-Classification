@@ -218,12 +218,28 @@ jupyter notebook Project_Breast_Cancer_Tumor_Classification.ipynb
 
 This will generate the following `.pkl` files:
 
+<<<<<<< Updated upstream
 ```
 logistic_regression_model.pkl
 svm_model.pkl
 random_forest_model.pkl
 scaler.pkl
 ```
+=======
+## Running the Notebooks
+
+1. Open the notebook files in VS Code or Jupyter.
+2. Run the cells from top to bottom.
+3. Make sure the dataset file is in the project root.
+
+### Notes for `Stage_5_6_7_8_Feature_Engineering_Model_Building_Evaluation_Explainability.ipynb`
+
+- The notebook now loads the CSV with explicit column names.
+- The `outcome` target column is created by mapping `diagnosis` values.
+- A local guard is included for the Colab download block, so the notebook works in non-Colab environments.
+
+## Model Artifacts
+>>>>>>> Stashed changes
 
 ### 5. Run the Streamlit App
 
