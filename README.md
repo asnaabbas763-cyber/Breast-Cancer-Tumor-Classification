@@ -12,7 +12,7 @@
 | Field | Details |
 |---|---|
 | **Project Title** | Breast Cancer Tumor Classification Using Clinical Features |
-| **Team Members** | Angel Treesa John, Asna Abbas, Nikhil AS |
+| **Team Members** | Angel Treesa John, Asna Abbas, Nikhil A S |
 | **Course** | Predictive Analytics |
 | **Institution** | Digital University kerala |
 | **Submission Date** | 16-05-2026 |
@@ -149,9 +149,7 @@ Models were evaluated on the held-out test set using five metrics (Accuracy, Pre
 
 ## 🖥️ Screenshots
 
-![Front Page](plots/interface.jpeg)
 
-![Prediction Output](plots/prediction_results.jpeg) 
 
 ---
 
