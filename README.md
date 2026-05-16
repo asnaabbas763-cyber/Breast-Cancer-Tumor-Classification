@@ -149,9 +149,9 @@ Models were evaluated on the held-out test set using five metrics (Accuracy, Pre
 
 ## 🖥️ Screenshots
 
-![Front Page](plots/front_page.jpeg)
+![Front Page](plots/interface.jpeg)
 
-![Prediction Output](plots/prediction_output.jpeg) 
+![Prediction Output](plots/prediction_results.jpeg) 
 
 ---
 
