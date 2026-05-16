@@ -149,9 +149,8 @@ Models were evaluated on the held-out test set using five metrics (Accuracy, Pre
 
 ## 🖥️ Screenshots
 
-> Add screenshots of your Streamlit app below. Suggested sections to capture:
-> - Input form / feature sliders
-> - Prediction output 
+<img width="1738" height="761" alt="image" src="https://github.com/user-attachments/assets/cca6cc4e-cfc3-43ad-98d8-fd07febff096" />
+
 
 ---
 
