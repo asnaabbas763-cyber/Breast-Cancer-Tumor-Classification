@@ -47,6 +47,7 @@ st.markdown("""
         padding: 1.5rem;
         border-radius: 10px;
         margin: 1rem 0;
+        color: #1a1a1a;
     }
     .result-benign {
         background: linear-gradient(135deg, #EAF7F0, #D5F5E3);
@@ -54,6 +55,7 @@ st.markdown("""
         padding: 1.5rem;
         border-radius: 10px;
         margin: 1rem 0;
+        color: #1a1a1a;
     }
     .metric-card {
         background: #f8f9fa;
