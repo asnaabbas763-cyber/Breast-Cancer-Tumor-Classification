@@ -103,10 +103,10 @@ All models and the scaler were serialized as `.pkl` files using `joblib`.
 Models were evaluated on the held-out test set using five metrics (Accuracy, Precision, Recall, F1-Score, ROC-AUC) and a 5-fold Stratified Cross-Validation. Confusion matrices and ROC curves were plotted for all three models.
 
 ## ROC Curve
-![ROC Curve](roc_curve.png)
+![ROC Curve](plots/roc_curve.png)
 
 ## Confusion Matrix
-![Confusion Matrix](confusion_metrics.png)
+![Confusion Matrix](plots/confusion_metrics.png)
 
 ### Stage 8 - Model Interpretation & Explainability
 - **Random Forest Feature Importances** - global feature ranking.
@@ -149,8 +149,9 @@ Models were evaluated on the held-out test set using five metrics (Accuracy, Pre
 
 ## 🖥️ Screenshots
 
-<img width="1738" height="761" alt="image" src="https://github.com/user-attachments/assets/cca6cc4e-cfc3-43ad-98d8-fd07febff096" />
+## Documentation Update
 
+Screenshots of model outputs and evaluation results were intended to be included. However, due to a technical limitation during repository update, image files could not be uploaded. All relevant findings and performance metrics are documented within the project files.
 
 ---
 
@@ -160,7 +161,6 @@ The app is deployed on **Streamlit Community Cloud** and accessible at:
 
 🔗 **[https://your-app-name.streamlit.app](https://breast-cancer-tumor-classification-5psqkbblq5szdblfeuw4uu.streamlit.app/)**
 
-> *(Replace the link above with your actual Streamlit deployment URL)*
 
 ---
 
