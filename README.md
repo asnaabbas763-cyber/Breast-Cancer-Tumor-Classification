@@ -149,6 +149,7 @@ Models were evaluated on the held-out test set using five metrics (Accuracy, Pre
 
 ## 🖥️ Screenshots
 
+<img width="1600" height="751" alt="WhatsApp Image 2026-05-16 at 18 57 56" src="https://github.com/user-attachments/assets/7efe4290-9f23-43a2-a6dd-638f0f0bad29" />
 
 
 ---
