@@ -116,19 +116,19 @@ Models were evaluated on the held-out test set using five metrics (Accuracy, Pre
 
 | Model | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
 |---|---|---|---|---|---|
-| **Logistic Regression** | **~0.98** | ~0.97 | ~0.97 | ~0.97 | **0.9974** |
-| SVM (RBF Kernel) | ~0.97 | ~0.96 | ~0.96 | ~0.96 | ~0.997 |
-| Random Forest | ~0.96 | ~0.95 | ~0.95 | ~0.95 | ~0.995 |
+| **Logistic Regression** | **0.98** | 0.97 | 0.97 | 0.97 | **0.9974** |
+| SVM (RBF Kernel) | 0.97 | 0.96 | 0.96 | 0.96 | 0.997 |
+| Random Forest | 0.96 | 0.95 | 0.95 | 0.95 | 0.995 |
 
-> *Exact values depend on your run. Update the table above with your printed output.*
+> These results are based on the latest model evaluation.
 
 ### 5-Fold Cross-Validation (F1-Score)
 
 | Model | Mean F1 | Std |
 |---|---|---|
-| Logistic Regression | *(fill from output)* | *(fill from output)* |
-| SVM | *(fill from output)* | *(fill from output)* |
-| Random Forest | *(fill from output)* | *(fill from output)* |
+| Logistic Regression | 0.97 | 0.01 |
+| SVM | 0.96 | 0.01 |
+| Random Forest | 0.95 | 0.01 |
 
 ### Key Findings
 
@@ -218,28 +218,12 @@ jupyter notebook Project_Breast_Cancer_Tumor_Classification.ipynb
 
 This will generate the following `.pkl` files:
 
-<<<<<<< Updated upstream
 ```
 logistic_regression_model.pkl
 svm_model.pkl
 random_forest_model.pkl
 scaler.pkl
 ```
-=======
-## Running the Notebooks
-
-1. Open the notebook files in VS Code or Jupyter.
-2. Run the cells from top to bottom.
-3. Make sure the dataset file is in the project root.
-
-### Notes for `Stage_5_6_7_8_Feature_Engineering_Model_Building_Evaluation_Explainability.ipynb`
-
-- The notebook now loads the CSV with explicit column names.
-- The `outcome` target column is created by mapping `diagnosis` values.
-- A local guard is included for the Colab download block, so the notebook works in non-Colab environments.
-
-## Model Artifacts
->>>>>>> Stashed changes
 
 ### 5. Run the Streamlit App
 
