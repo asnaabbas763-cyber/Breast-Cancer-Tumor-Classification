@@ -103,10 +103,10 @@ All models and the scaler were serialized as `.pkl` files using `joblib`.
 Models were evaluated on the held-out test set using five metrics (Accuracy, Precision, Recall, F1-Score, ROC-AUC) and a 5-fold Stratified Cross-Validation. Confusion matrices and ROC curves were plotted for all three models.
 
 ## ROC Curve
-![ROC Curve](roc_curve.png)
+![ROC Curve](plots/ROC curve.png)
 
 ## Confusion Matrix
-![Confusion Matrix](confusion_metrics.png)
+![Confusion Matrix](plots/confusion metrics.png)
 
 ### Stage 8 - Model Interpretation & Explainability
 - **Random Forest Feature Importances** - global feature ranking.
