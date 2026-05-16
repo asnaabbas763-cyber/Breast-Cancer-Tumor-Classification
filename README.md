@@ -21,9 +21,9 @@
 
 ## 🧩 Problem Statement & Motivation
 
-Breast cancer is one of the leading causes of cancer-related mortality worldwide. Early and accurate detection of malignant tumors is critical — it directly determines whether a patient receives timely treatment, which significantly improves survival rates.
+Breast cancer is one of the leading causes of cancer-related mortality worldwide. Early and accurate detection of malignant tumors is critical - it directly determines whether a patient receives timely treatment, which significantly improves survival rates.
 
-This project builds a machine learning pipeline to **classify breast tumors as Malignant (cancerous) or Benign (non-cancerous)** using clinical features derived from digitized images of cell nuclei. Rather than relying on a single model, we compare three well-established algorithms — Logistic Regression, Support Vector Machine, and Random Forest — and evaluate them across multiple metrics to identify the best approach for this high-stakes medical classification task.
+This project builds a machine learning pipeline to **classify breast tumors as Malignant (cancerous) or Benign (non-cancerous)** using clinical features derived from digitized images of cell nuclei. Rather than relying on a single model, we compare three well-established algorithms - Logistic Regression, Support Vector Machine, and Random Forest - and evaluate them across multiple metrics to identify the best approach for this high-stakes medical classification task.
 
 The motivation is two-fold:
 - **Clinical impact:** Assist medical practitioners with a data-driven second opinion tool.
@@ -66,29 +66,29 @@ Features are computed from digitized images of fine needle aspirate (FNA) of bre
 
 The project follows a complete Machine Learning lifecycle across **8 stages**:
 
-### Stage 1 — Problem Definition & Literature Review
+### Stage 1 - Problem Definition & Literature Review
 Defined the binary classification objective and reviewed prior art on WBCD. Literature consistently reports >90% accuracy with appropriate preprocessing. Key morphological predictors identified: radius, texture, perimeter, area, and concavity.
 
-### Stage 2 — Data Collection & Understanding
+### Stage 2 - Data Collection & Understanding
 Loaded the dataset from Google Drive. Explored the shape (568 × 32), column types, and the meaning of each feature group (mean, SE, worst).
 
-### Stage 3 — Data Preprocessing & Cleaning
+### Stage 3 - Data Preprocessing & Cleaning
 - Dropped the non-informative `id` column.
 - Encoded the target: `M → 1`, `B → 0`.
 - Confirmed zero missing values and zero duplicate rows.
 - Verified correct data types for all columns.
 
-### Stage 4 — Exploratory Data Analysis (EDA)
+### Stage 4 - Exploratory Data Analysis (EDA)
 - **Class distribution:** Countplot to visualize slight imbalance.
 - **Feature distributions:** Histograms across all 30 features (mostly normal/slightly skewed).
 - **Outlier detection:** Boxplots — some outliers present but not extreme enough to distort analysis.
 - **Correlation analysis:** Heatmap revealed high collinearity between radius, perimeter, and area features.
 - **Key relationships:** Scatterplot of `radius_mean` vs `area_mean` showed clear class separation.
 
-### Stage 5 — Feature Engineering & Selection
+### Stage 5 - Feature Engineering & Selection
 Features were retained as-is given the strong domain-validated predictive power. StandardScaler applied for Logistic Regression and SVM. Random Forest used the same scaled data for consistency.
 
-### Stage 6 — Model Building & Training
+### Stage 6 - Model Building & Training
 Three models were trained on an **80/20 stratified split** (preserving class ratio):
 
 | Model | Key Config |
@@ -99,14 +99,20 @@ Three models were trained on an **80/20 stratified split** (preserving class rat
 
 All models and the scaler were serialized as `.pkl` files using `joblib`.
 
-### Stage 7 — Model Evaluation
+### Stage 7 - Model Evaluation
 Models were evaluated on the held-out test set using five metrics (Accuracy, Precision, Recall, F1-Score, ROC-AUC) and a 5-fold Stratified Cross-Validation. Confusion matrices and ROC curves were plotted for all three models.
 
-### Stage 8 — Model Interpretation & Explainability
-- **Random Forest Feature Importances** — global feature ranking.
-- **Logistic Regression Coefficients** — direction and magnitude of each feature's influence.
-- **Permutation Importance** — true impact measured on the test F1 score for all three models.
-- **SHAP (SHapley Additive exPlanations)** — beeswarm summary plots (RF + LR), bar importance plots, and a waterfall plot for a single prediction.
+## ROC Curve
+![ROC Curve](roc_curve.png)
+
+## Confusion Matrix
+![Confusion Matrix](confusion_metrics.png)
+
+### Stage 8 - Model Interpretation & Explainability
+- **Random Forest Feature Importances** - global feature ranking.
+- **Logistic Regression Coefficients** - direction and magnitude of each feature's influence.
+- **Permutation Importance** - true impact measured on the test F1 score for all three models.
+- **SHAP (SHapley Additive exPlanations)** - beeswarm summary plots (RF + LR), bar importance plots, and a waterfall plot for a single prediction.
 
 ---
 
@@ -132,8 +138,8 @@ Models were evaluated on the held-out test set using five metrics (Accuracy, Pre
 
 ### Key Findings
 
-- **Best Overall Model:** Logistic Regression — highest Accuracy and ROC-AUC (0.9974).
-- **Most Critical Metric:** Recall — a False Negative (missed malignancy) is far more dangerous than a False Positive in clinical settings.
+- **Best Overall Model:** Logistic Regression - highest Accuracy and ROC-AUC (0.9974).
+- **Most Critical Metric:** Recall - a False Negative (missed malignancy) is far more dangerous than a False Positive in clinical settings.
 - **Top Predictive Features (consistent across all models):**
   1. `concave_points_worst`
   2. `perimeter_worst`
@@ -145,13 +151,7 @@ Models were evaluated on the held-out test set using five metrics (Accuracy, Pre
 
 > Add screenshots of your Streamlit app below. Suggested sections to capture:
 > - Input form / feature sliders
-> - Prediction output (Malignant / Benign)
-> - Model selector dropdown
-> - Confidence score / probability display
-
-| Input Panel | Prediction Result |
-|---|---|
-| *(add screenshot here)* | *(add screenshot here)* |
+> - Prediction output 
 
 ---
 
@@ -159,81 +159,9 @@ Models were evaluated on the held-out test set using five metrics (Accuracy, Pre
 
 The app is deployed on **Streamlit Community Cloud** and accessible at:
 
-🔗 **[https://your-app-name.streamlit.app](https://your-app-name.streamlit.app)**
+🔗 **[https://your-app-name.streamlit.app](https://breast-cancer-tumor-classification-5psqkbblq5szdblfeuw4uu.streamlit.app/)**
 
 > *(Replace the link above with your actual Streamlit deployment URL)*
-
----
-
-## 🛠️ Setup & Run Locally
-
-### Prerequisites
-
-- Python 3.9 or above
-- pip
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/breast-cancer-classification.git
-cd breast-cancer-classification
-```
-
-### 2. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-**`requirements.txt` should include:**
-
-```
-numpy
-pandas
-matplotlib
-seaborn
-scikit-learn
-joblib
-shap
-streamlit
-```
-
-### 3. Add the Dataset
-
-Place the dataset CSV file in the project root (or update the path in the notebook):
-
-```
-Breast Cancer Wisconsin (Diagnostic) -wbc.csv
-```
-
-The dataset is available on the [UCI ML Repository](https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic).
-
-### 4. Train the Models (Optional)
-
-Open and run the notebook in Google Colab or Jupyter:
-
-```bash
-jupyter notebook Project_Breast_Cancer_Tumor_Classification.ipynb
-```
-
-This will generate the following `.pkl` files:
-
-```
-logistic_regression_model.pkl
-svm_model.pkl
-random_forest_model.pkl
-scaler.pkl
-```
-
-### 5. Run the Streamlit App
-
-Ensure the `.pkl` files are in the same directory as `app.py`, then run:
-
-```bash
-streamlit run app.py
-```
-
-The app will open at `http://localhost:8501` in your browser.
 
 ---
 
