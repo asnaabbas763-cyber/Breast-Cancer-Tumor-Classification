@@ -149,9 +149,9 @@ Models were evaluated on the held-out test set using five metrics (Accuracy, Pre
 
 ## 🖥️ Screenshots
 
-> Add screenshots of your Streamlit app below. Suggested sections to capture:
-> - Input form / feature sliders
-> - Prediction output 
+![Front Page](front_page.jpeg)
+
+![Prediction Output](prediction_output.jpeg) 
 
 ---
 
@@ -161,7 +161,6 @@ The app is deployed on **Streamlit Community Cloud** and accessible at:
 
 🔗 **[https://your-app-name.streamlit.app](https://breast-cancer-tumor-classification-5psqkbblq5szdblfeuw4uu.streamlit.app/)**
 
-> *(Replace the link above with your actual Streamlit deployment URL)*
 
 ---
 
