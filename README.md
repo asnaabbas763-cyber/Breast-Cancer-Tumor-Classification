@@ -149,9 +149,7 @@ Models were evaluated on the held-out test set using five metrics (Accuracy, Pre
 
 ## 🖥️ Screenshots
 
-## Documentation Update
 
-Screenshots of model outputs and evaluation results were intended to be included. However, due to a technical limitation during repository update, image files could not be uploaded. All relevant findings and performance metrics are documented within the project files.
 
 ---
 
