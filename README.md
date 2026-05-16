@@ -12,10 +12,10 @@
 | Field | Details |
 |---|---|
 | **Project Title** | Breast Cancer Tumor Classification Using Clinical Features |
-| **Team Members** | *(Add your team member names here)* |
-| **Course** | *(Add course name & code, e.g., CS456 — Machine Learning)* |
-| **Institution** | *(Add institution name)* |
-| **Submission Date** | *(Add date)* |
+| **Team Members** | Angel Treesa John, Asna Abbas, Nikhil AS |
+| **Course** | Predictive Analytics |
+| **Institution** | Digital University kerala |
+| **Submission Date** | 16-05-2026 |
 
 ---
 
